@@ -49,9 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             button.setLayoutParams(lp);
             button.setText(stringbtn[i]);
             button.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-            button.setBackgroundColor(Color.MAGENTA);
+            //button.setBackgroundColor(Color.MAGENTA);
             button.setTypeface(Typeface.SERIF, Typeface.BOLD);
+            button.setBackgroundResource(R.drawable.buttonstyle);
             button.setId(i);
+            button.setOnClickListener(this);
             ll1.addView(button);
         }
     }
@@ -63,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == 1) {
             Intent i = new Intent(Intent.ACTION_DIAL);
             startActivity(i);
+        }
+        if (id==6){
+            for (int i=0;i<stringbtn.length;i++){
+                Button boton=findViewById(i);
+                boton.setBackgroundResource(R.drawable.buttonstyle2);
+            }
         }
     }
 
